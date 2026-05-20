@@ -86,7 +86,7 @@ See SUBMISSION.md for the submission format.
 
 Submission form:
 
-https://docs.google.com/forms/d/e/1FAIpQLSeV3rKJUQVbnsYmiM2UKgiXcgFLQOAN9TJbIOLlMPV8SQn3Sg/viewform?usp=header
+https://forms.gle/nwfPcyGeZTkxPPhf9
 
 ## Judging Criteria
 
