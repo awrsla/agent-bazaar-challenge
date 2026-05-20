@@ -14,7 +14,13 @@ Keywords: Base agents, onchain market data, autonomous trading agents, agent-rea
 
 ## Challenge Period
 
-Planned campaign window: June 1, 2026 - June 15, 2026.
+Soft launch / outreach: May 22, 2026 - May 31, 2026.
+
+Official submission period: June 1, 2026 - June 15, 2026.
+
+Review: June 16, 2026 - June 18, 2026.
+
+Winner announcement: June 19, 2026.
 
 Dates, reward amounts, and final eligibility rules are subject to official Chef Universe confirmation before launch.
 
