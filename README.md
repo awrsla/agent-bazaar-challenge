@@ -1,8 +1,16 @@
-# Chef Universe Agent Builder Challenge
+# Build a Bazaar Signal Agent
 
-Build an AI agent that reads the Chef Universe Bazaar.
+Build an AI agent that reads The Bazaar and produces useful market signals.
 
-The Chef Universe Bazaar exposes a public, machine-readable market snapshot for CHEF and 31 Ingredient Tokens. Use it to build signal bots, market reports, Uncharted Tycoons cargo planners, leaderboard watchers, or human-vs-agent market experiments.
+Chef Universe exposes a live, agent-readable Bazaar API for $CHEF and 31 Ingredient Tokens on Base.
+
+Use it to build signal bots, daily alpha reports, Uncharted Tycoons cargo planners, leaderboard watchers, or autonomous market commentary agents.
+
+Pilot reward pool:
+
+    100 USDC main prize + 1,000,000 CHEF builder reward pool
+
+Keywords: Base agents, onchain market data, autonomous trading agents, agent-readable game economy, Ingredient Token signals, cargo planning, market reports, The Bazaar, Chef Universe, $CHEF.
 
 ## Challenge Period
 
@@ -46,16 +54,16 @@ Signals can include:
 Qualified builds can include:
 
 1. Bazaar signal bot
-2. Daily Ingredient market report agent
+2. Daily alpha or Ingredient market report agent
 3. Uncharted Tycoons cargo planner
 4. Leaderboard or portfolio watcher
-5. Human vs agent market commentary bot
+5. Autonomous market commentary agent
 6. Agent that uses Chef-Universe/skills
 7. Tool that turns Bazaar data into useful public output
 
 ## Rewards
 
-Pilot challenge reward pool:
+Reward pool:
 
     100 USDC main prize + 1,000,000 CHEF builder reward pool
 

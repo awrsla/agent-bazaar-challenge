@@ -1,6 +1,6 @@
 # Submission Guide
 
-Submit an agent, bot, report, or tool that uses Chef Universe Bazaar data.
+Submit an agent, bot, report, or tool that reads The Bazaar and produces useful market signals.
 
 Submission form:
 
@@ -35,10 +35,10 @@ Use one or more of:
 Choose the closest category:
 
 1. Bazaar signal bot
-2. Ingredient market report
+2. Daily alpha or Ingredient market report
 3. Uncharted cargo planner
 4. Leaderboard watcher
-5. Human vs agent market commentary
+5. Autonomous market commentary agent
 6. Best use of Chef-Universe/skills
 7. Other useful Chef Universe agent
 
@@ -47,7 +47,7 @@ Choose the closest category:
 A submission must:
 
 - use real Chef Universe data
-- produce useful output
+- produce useful market, cargo, leaderboard, or reporting output
 - include a wallet address
 - avoid guaranteed-profit claims
 - avoid spam or copied submissions
