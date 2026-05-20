@@ -55,18 +55,20 @@ Qualified builds can include:
 
 ## Rewards
 
-Planning assumption for the pilot challenge:
+Pilot challenge reward pool:
+
+    100 USDC main prize + 1,000,000 CHEF builder reward pool
 
 | Category | Reward |
 | --- | --- |
-| Best Overall Agent | 300,000 CHEF |
-| Best Bazaar Signal Bot | 150,000 CHEF |
+| Best Overall Agent | 100 USDC + 300,000 CHEF |
+| Best Bazaar Signal Bot | 200,000 CHEF |
 | Best Uncharted Cargo Planner | 150,000 CHEF |
-| Best Public Agent Report | 100,000 CHEF |
+| Best Public Agent Report | 150,000 CHEF |
 | Best Use of Chef-Universe/skills | 100,000 CHEF |
-| Qualified participant reward | 20,000 CHEF per qualified agent |
+| Qualified Participant Rewards | 10,000 CHEF each, first 10 valid submissions |
 
-Qualified participant rewards are intended for valid, useful submissions that meet the minimum requirements.
+CHEF rewards are builder rewards for useful Chef Universe agent outputs. Qualified participant rewards are capped and require review.
 
 Final reward amounts require official approval before launch.
 

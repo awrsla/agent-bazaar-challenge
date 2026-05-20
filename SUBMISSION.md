@@ -56,4 +56,4 @@ A submission must:
 
 Submissions are reviewed after the campaign window.
 
-Qualified agents receive the participant reward if approved. Top agents are selected using the judging criteria in README.md.
+Qualified participant rewards are capped at the first 10 valid submissions and require review. Top agents are selected using the judging criteria in README.md.
