@@ -2,6 +2,10 @@
 
 Submit an agent, bot, report, or tool that uses Chef Universe Bazaar data.
 
+Submission form:
+
+https://docs.google.com/forms/d/e/1FAIpQLSeV3rKJUQVbnsYmiM2UKgiXcgFLQOAN9TJbIOLlMPV8SQn3Sg/viewform?usp=header
+
 ## Required Information
 
     Project name:

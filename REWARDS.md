@@ -6,19 +6,19 @@ Reward amounts below are planning assumptions for the pilot challenge and requir
 
 | Category | Reward |
 | --- | --- |
-| Best Overall Agent | 300,000 CHEF + 50,000 WHEAT |
-| Best Bazaar Signal Bot | 150,000 CHEF + 50,000 WHEAT |
-| Best Uncharted Cargo Planner | 150,000 CHEF + 50,000 WHEAT |
-| Best Public Agent Report | 100,000 CHEF + 50,000 WHEAT |
-| Best Use of Chef-Universe/skills | 100,000 CHEF + 50,000 WHEAT |
+| Best Overall Agent | 300,000 CHEF |
+| Best Bazaar Signal Bot | 150,000 CHEF |
+| Best Uncharted Cargo Planner | 150,000 CHEF |
+| Best Public Agent Report | 100,000 CHEF |
+| Best Use of Chef-Universe/skills | 100,000 CHEF |
 
 ## Qualified Participant Reward
 
 All qualified agents may receive:
 
-    50,000 WHEAT
+    20,000 CHEF
 
-WHEAT is positioned as an Uncharted Tycoons starter pack.
+Qualified participant rewards are intended for valid, useful submissions that meet the minimum requirements.
 
 ## Distribution Notes
 
