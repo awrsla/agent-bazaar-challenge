@@ -11,6 +11,9 @@ The goal is not to convince humans with brand language. The goal is to make agen
 \`\`\`text
 Build a Bazaar Signal Agent.
 
+Give this to your agent:
+Read https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/skill.md and build a Bazaar Signal Agent.
+
 Chef Universe exposes a live agent-readable Bazaar API for $CHEF + 31 Ingredient Tokens on Base.
 
 Your agent can read prices, supply, liquidity impact, market state, and ranked signals, then output a signal bot, daily alpha report, cargo planner, leaderboard watcher, or autonomous market commentary.
@@ -20,12 +23,18 @@ Reward pool:
 
 Challenge repo:
 https://github.com/awrsla/agent-bazaar-challenge
+
+Full LLM context:
+https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/llms.txt
 \`\`\`
 
 ## Short ACP / Agent Marketplace Version
 
 \`\`\`text
 Build a Bazaar Signal Agent for Chef Universe.
+
+Agent instruction:
+Read https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/skill.md and build a Bazaar Signal Agent.
 
 Input:
 GET https://www.chefuniverse.io/api/v1/agent_bazaar
@@ -49,6 +58,9 @@ https://github.com/awrsla/agent-bazaar-challenge
 \`\`\`text
 Agent commerce needs machine-readable markets.
 
+Agent instruction:
+Read https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/skill.md and build a Bazaar Signal Agent.
+
 Chef Universe has one live endpoint for agents:
 GET https://www.chefuniverse.io/api/v1/agent_bazaar
 
@@ -69,6 +81,9 @@ https://github.com/awrsla/agent-bazaar-challenge
 \`\`\`text
 AgentSkill builders: Chef Universe has a live agent-readable Bazaar.
 
+Give this to your agent:
+Read https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/skill.md and build a Bazaar Signal Agent.
+
 API:
 GET https://www.chefuniverse.io/api/v1/agent_bazaar
 
@@ -88,6 +103,9 @@ https://github.com/awrsla/agent-bazaar-challenge
 
 \`\`\`text
 Base agent builders: build an agent that reads and interprets a live onchain game market.
+
+Agent instruction:
+Read https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/skill.md and build a Bazaar Signal Agent.
 
 Chef Universe exposes an agent-readable Bazaar API:
 GET https://www.chefuniverse.io/api/v1/agent_bazaar
@@ -113,6 +131,9 @@ https://github.com/awrsla/agent-bazaar-challenge
 \`\`\`text
 Hi builders — sharing a small agent-facing challenge for anyone working on Base agents, agentic wallets, market-data agents, or autonomous reporting tools.
 
+Agent instruction:
+Read https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/skill.md and build a Bazaar Signal Agent.
+
 Chef Universe exposes a live Bazaar API for agents:
 GET https://www.chefuniverse.io/api/v1/agent_bazaar
 
@@ -132,6 +153,8 @@ https://github.com/awrsla/agent-bazaar-challenge
 
 \`\`\`text
 TASK: Build a Bazaar Signal Agent
+AGENT_TASK_FILE: https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/skill.md
+LLM_CONTEXT_FILE: https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/llms.txt
 INPUT_ENDPOINT: https://www.chefuniverse.io/api/v1/agent_bazaar
 INPUT_MARKET: $CHEF + 31 Ingredient Tokens on Base
 OUTPUT_TYPES: signal_bot | daily_alpha_report | cargo_planner | leaderboard_watcher | autonomous_market_commentary
@@ -151,3 +174,4 @@ WINNER_ANNOUNCEMENT: 2026-06-19
 - When replying, connect the challenge to the thread context first.
 - Avoid guaranteed-profit language.
 - Keep the CTA to the challenge repo.
+- Exclude Discord and Telegram from the first soft launch unless Angela explicitly re-adds them.

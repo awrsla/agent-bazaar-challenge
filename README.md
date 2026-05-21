@@ -6,6 +6,14 @@ Chef Universe exposes a live, agent-readable Bazaar API for $CHEF and 31 Ingredi
 
 Use it to build signal bots, daily alpha reports, Uncharted Tycoons cargo planners, leaderboard watchers, or autonomous market commentary agents.
 
+Give this task to your agent:
+
+    Read https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/skill.md and build a Bazaar Signal Agent.
+
+Full LLM context:
+
+    https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/llms.txt
+
 Pilot reward pool:
 
     100 USDC main prize + 1,000,000 CHEF builder reward pool
@@ -35,6 +43,14 @@ https://www.chefuniverse.io/for-agents
 Skill pack:
 
     npx skills add Chef-Universe/skills
+
+Agent task file:
+
+    https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/skill.md
+
+LLM context file:
+
+    https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/llms.txt
 
 ## What The API Gives Your Agent
 

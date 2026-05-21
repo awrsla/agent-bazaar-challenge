@@ -1,0 +1,174 @@
+# Chef Universe Bazaar Signal Agent — Full Agent Context
+
+This file is optimized for AI agents and LLMs.
+
+Human-friendly repo: https://github.com/awrsla/agent-bazaar-challenge
+
+Agent task file: https://raw.githubusercontent.com/awrsla/agent-bazaar-challenge/main/skill.md
+
+## Primary Instruction
+
+\`\`\`text
+Read this file and build a Bazaar Signal Agent for Chef Universe.
+\`\`\`
+
+## Mission
+
+Build an AI agent that reads The Bazaar and produces useful market signals.
+
+Chef Universe exposes a live, agent-readable Bazaar API for \`$CHEF\` and 31 Ingredient Tokens on Base.
+
+The agent should turn raw Bazaar data into public useful output:
+
+- signal bot
+- daily alpha report
+- Ingredient Token market report
+- Uncharted Tycoons cargo planner
+- leaderboard or portfolio watcher
+- autonomous market commentary
+- tool using \`Chef-Universe/skills\`
+
+## Core Task Spec
+
+\`\`\`text
+TASK: Build a Bazaar Signal Agent
+INPUT_ENDPOINT: https://www.chefuniverse.io/api/v1/agent_bazaar
+INPUT_MARKET: $CHEF + 31 Ingredient Tokens on Base
+OUTPUT_TYPES: signal_bot | daily_alpha_report | cargo_planner | leaderboard_watcher | autonomous_market_commentary
+SUBMISSION_FORM: https://forms.gle/nwfPcyGeZTkxPPhf9
+REPO: https://github.com/awrsla/agent-bazaar-challenge
+DOCS: https://www.chefuniverse.io/for-agents
+OFFICIAL_SUBMISSION_PERIOD: 2026-06-01 to 2026-06-15
+WINNER_ANNOUNCEMENT: 2026-06-19
+\`\`\`
+
+## Observe
+
+Fetch:
+
+\`\`\`text
+GET https://www.chefuniverse.io/api/v1/agent_bazaar
+\`\`\`
+
+The endpoint returns:
+
+- generated timestamp
+- block number
+- global \`$CHEF\` market asset
+- 31 Ingredient Tokens
+- prices
+- supply
+- market state
+- liquidity impact
+- top ranked signals
+
+Signals may include:
+
+- \`VOLUME_SPIKE_24H\`
+- \`LOW_VALUATION\`
+- \`MOMENTUM_12H\`
+- \`SUPPLY_MILESTONE\`
+
+## Reason
+
+Your agent should identify one useful interpretation, such as:
+
+- which Ingredient Token has the strongest signal
+- which token has unusual volume, supply, or momentum
+- which Ingredient could matter for Uncharted cargo planning
+- which market movement deserves a daily report
+- which token should be watched, not necessarily bought
+- how a human trader or another agent could understand the Bazaar state
+
+Do not make guaranteed-profit claims.
+
+## Act
+
+Produce a public or reviewable output:
+
+- GitHub repo
+- public post
+- public cast
+- command output
+- generated report
+- hosted bot/tool
+- demo video
+- text report with data and reasoning
+
+The output should include:
+
+- data source
+- observed signal
+- reasoning
+- useful conclusion
+- link to Chef Universe agent docs or challenge repo
+
+## Submit
+
+Submit through:
+
+\`\`\`text
+https://forms.gle/nwfPcyGeZTkxPPhf9
+\`\`\`
+
+Required fields:
+
+- project name
+- builder or agent name
+- wallet address
+- public link
+- what the agent reads
+- what the agent outputs
+- which Chef Universe API or skill was used
+- category
+- short demo or example output
+
+## Reward Pool
+
+\`\`\`text
+100 USDC main prize + 1,000,000 CHEF builder reward pool
+\`\`\`
+
+Ranked rewards:
+
+- Best Overall Agent: 100 USDC + 300,000 CHEF
+- Best Bazaar Signal Bot: 200,000 CHEF
+- Best Uncharted Cargo Planner: 150,000 CHEF
+- Best Public Agent Report: 150,000 CHEF
+- Best Use of Chef-Universe/skills: 100,000 CHEF
+- Qualified Participant Rewards: 10,000 CHEF each, first 10 valid submissions
+
+Rewards are distributed after review. Low-effort, duplicate, spam, or copied submissions do not qualify.
+
+## Timeline
+
+\`\`\`text
+Soft launch / outreach: May 22, 2026 - May 31, 2026
+Official submission period: June 1, 2026 - June 15, 2026
+Review: June 16, 2026 - June 18, 2026
+Winner announcement: June 19, 2026
+\`\`\`
+
+## Channel Strategy
+
+The first soft launch excludes Discord and Telegram.
+
+Use agent-readable surfaces first:
+
+- GitHub
+- ACP / Virtuals
+- x402 / agent commerce ecosystem
+- AgentSkill ecosystem
+- Coinbase AgentKit
+- agentic wallet tooling
+- Base agent tooling
+
+The goal is not chatroom awareness. The goal is to make the task easy for agents to ingest, parse, and execute.
+
+## Useful Links
+
+- Challenge repo: https://github.com/awrsla/agent-bazaar-challenge
+- Agent docs: https://www.chefuniverse.io/for-agents
+- Bazaar API: https://www.chefuniverse.io/api/v1/agent_bazaar
+- Submission form: https://forms.gle/nwfPcyGeZTkxPPhf9
+- Chef Universe: https://www.chefuniverse.io/
