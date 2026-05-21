@@ -1,0 +1,78 @@
+{
+  "project_name": "Bazaar Signal Receipt Map",
+  "endpoint": "https://www.chefuniverse.io/api/v1/agent_bazaar",
+  "fetched_at": "2026-05-21T10:54:06.618Z",
+  "generated_at": "2026-05-21T10:52:40.825Z",
+  "block_number": 46285705,
+  "snapshot_sha256": "4cb4fc0c1f5f457c6943d2c1e5a1d0fe84c75d3e662b19bd668e04c453f20539",
+  "top_signal": {
+    "ticker": "cfAVOCADO",
+    "kind": "VOLUME_SPIKE_24H",
+    "score": 1,
+    "note": "24h vol 8.0× daily season avg"
+  },
+  "watchlist": [
+    {
+      "ticker": "cfAVOCADO",
+      "score": 166.7939,
+      "primary_signal": "VOLUME_SPIKE_24H",
+      "signal_note": "24h vol 8.0× daily season avg",
+      "market_cap_chef": 9750407.349839648,
+      "volume_24h_chef": 3020447.30632305,
+      "price_change_12h_pct": null,
+      "progress": 0.1993217784655128,
+      "agent_note": "Review volume spike: 24h vol 8.0× daily season avg."
+    },
+    {
+      "ticker": "cfWHEAT",
+      "score": 81.5824,
+      "primary_signal": "NO_TOP_SIGNAL",
+      "signal_note": "No top-ranked signal in this snapshot.",
+      "market_cap_chef": 19092399.99566095,
+      "volume_24h_chef": 76668872.81280525,
+      "price_change_12h_pct": null,
+      "progress": 0.2736221219216994,
+      "agent_note": "Watch only; no top-ranked signal was attached to this ingredient."
+    },
+    {
+      "ticker": "cfROSEMARY",
+      "score": 73.9925,
+      "primary_signal": "NO_TOP_SIGNAL",
+      "signal_note": "No top-ranked signal in this snapshot.",
+      "market_cap_chef": 23127664.890292097,
+      "volume_24h_chef": 13275220.839996336,
+      "price_change_12h_pct": null,
+      "progress": 0.27620519505590413,
+      "agent_note": "Watch only; no top-ranked signal was attached to this ingredient."
+    },
+    {
+      "ticker": "cfCHILI",
+      "score": 73.3849,
+      "primary_signal": "NO_TOP_SIGNAL",
+      "signal_note": "No top-ranked signal in this snapshot.",
+      "market_cap_chef": 10542673.850528236,
+      "volume_24h_chef": 16113236.721326608,
+      "price_change_12h_pct": null,
+      "progress": 0.1313087982703902,
+      "agent_note": "Watch only; no top-ranked signal was attached to this ingredient."
+    },
+    {
+      "ticker": "cfCHEESE",
+      "score": 72.7147,
+      "primary_signal": "NO_TOP_SIGNAL",
+      "signal_note": "No top-ranked signal in this snapshot.",
+      "market_cap_chef": 5816099.386912802,
+      "volume_24h_chef": 13813953.815679574,
+      "price_change_12h_pct": null,
+      "progress": 0.13115254786155425,
+      "agent_note": "Watch only; no top-ranked signal was attached to this ingredient."
+    }
+  ],
+  "unchecked_assumptions": [
+    "Signal ranking depends on the public API payload at fetch time.",
+    "No wallet balances, private order flow, or offchain social data are inspected.",
+    "Output is a reviewer-readable market receipt, not a trading instruction."
+  ],
+  "reviewer_rule": "Pass if the endpoint is reachable, the report hash matches the Markdown artifact, and the report avoids guaranteed-profit claims.",
+  "report_sha256": "bb8939d695baa43ac7b6c0be35df349b4579eb2fc52ac36771a467d287121ef1"
+}
