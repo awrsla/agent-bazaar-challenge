@@ -5,6 +5,7 @@ import { join } from 'node:path';
 
 const DEFAULT_ENDPOINT = 'https://www.chefuniverse.io/api/v1/agent_bazaar';
 const DEFAULT_LIMIT = 8;
+const SUBMISSION_DIR = 'submissions/tim-codex-bazaar-concentration-guard';
 
 function asNumber(value, fallback = 0) {
   const number = Number(value);
@@ -24,6 +25,10 @@ function round(value, digits = 2) {
 
 function hashText(text) {
   return createHash('sha256').update(text).digest('hex');
+}
+
+function replayCommand(limit = DEFAULT_LIMIT) {
+  return `node ${SUBMISSION_DIR}/concentration-guard.mjs --out ${SUBMISSION_DIR}/output --limit ${limit}`;
 }
 
 function asciiText(value) {
@@ -184,6 +189,7 @@ function summarizeMarket(bazaar, scored) {
 function buildReport(rawJson, options = {}) {
   const bazaar = typeof rawJson === 'string' ? JSON.parse(rawJson) : rawJson;
   const sourceText = typeof rawJson === 'string' ? rawJson : JSON.stringify(rawJson);
+  const sourceSha256 = hashText(sourceText);
   const topSignalMap = makeTopSignalMap(bazaar.top_signals);
   const scored = (bazaar.ingredients ?? []).map((ingredient) => scoreIngredient(ingredient, topSignalMap));
   const limit = options.limit ?? DEFAULT_LIMIT;
@@ -203,11 +209,43 @@ function buildReport(rawJson, options = {}) {
     source_generated_at: bazaar.generated_at ?? null,
     block_number: bazaar.block_number ?? null,
     cache_age_sec: bazaar.cache_age_sec ?? null,
-    source_sha256: hashText(sourceText),
+    source_sha256: sourceSha256,
+    replay: {
+      from: 'repository root',
+      command: replayCommand(limit),
+      output_files: [
+        `${SUBMISSION_DIR}/output/concentration-guard.md`,
+        `${SUBMISSION_DIR}/output/concentration-guard.json`,
+      ],
+      source_metadata: {
+        endpoint: options.endpoint ?? DEFAULT_ENDPOINT,
+        source_generated_at: bazaar.generated_at ?? null,
+        block_number: bazaar.block_number ?? null,
+        cache_age_sec: bazaar.cache_age_sec ?? null,
+        source_sha256: sourceSha256,
+      },
+      report_sha256_scope: 'JSON report object before report_sha256 is attached; it is not a file digest of concentration-guard.json.',
+    },
     methodology: {
       watch_score: 'Ranks signals, activity heat, positive momentum, liquidity, and curve position, then subtracts part of guard risk.',
       guard_score: 'Flags concentrated buy flow, fragile 10k CHEF liquidity, high volume versus market cap, sell pressure, late-curve status, and missing short-horizon price movement.',
       claim_limit: 'This is a monitoring report, not financial advice and not a guaranteed-profit system.',
+    },
+    interpretation: {
+      observed: [
+        'Endpoint response fields: global asset metadata, Ingredient Token prices, supply progress, liquidity impact, volume, buyer concentration, source timestamp, block number, and top signals.',
+        'Source SHA-256 and report SHA-256 values in this report.',
+      ],
+      inferred: [
+        'watch_score, guard_score, summary counts, sorted tables, and flags derived from the endpoint fields.',
+        'Concentration, thin-buyer, fragile-liquidity, high-volume-versus-cap, sell-pressure, late-curve, and data-quality risk labels.',
+      ],
+      not_checked: [
+        'Wallet balances, private order books, live trade execution, external exchange routes, future prices, profitability, or any private Chef Universe state.',
+        'Whether another bot or human will act on the same signal after this snapshot.',
+      ],
+      missing_short_horizon_price_change: 'When price_change_12h_pct or price_change_24h_pct is null, the endpoint snapshot did not expose that short-horizon field for the token. This should not be interpreted as flat price movement or no momentum.',
+      liquidity_impact_10k_chef: 'The 10k CHEF liquidity impact is the endpoint-provided simulated impact. A zero slippage value means the snapshot did not report measurable simulated impact, not that a live trade is guaranteed to execute with zero slippage. partial_fill=true or positive slippage marks the field as fragile.',
     },
     summary: summarizeMarket(bazaar, scored),
     top_signals: (bazaar.top_signals ?? []).map((signal) => ({
@@ -241,6 +279,10 @@ function markdownTable(items, columns) {
   return [header, divider, ...rows].join('\n');
 }
 
+function markdownBullets(items) {
+  return items.map((item) => `- ${item}`).join('\n');
+}
+
 function renderMarkdown(report) {
   const topSignalLines = report.top_signals.length
     ? report.top_signals.map((signal) => {
@@ -265,6 +307,9 @@ function renderMarkdown(report) {
     { label: '10k Slippage %', render: (item) => formatNumber(item.liquidity_impact_10k_chef.slippage_pct, 2) },
     { label: 'Flags', render: (item) => item.flags.slice(0, 4).join(', ') || 'none' },
   ];
+  const interpretation = report.interpretation ?? {};
+  const replay = report.replay ?? {};
+  const outputFiles = replay.output_files ?? [];
 
   return `# Chef Universe Bazaar Concentration Guard
 
@@ -277,6 +322,22 @@ Snapshot: block ${report.block_number ?? 'n/a'}, source generated ${report.sourc
 Source SHA-256: \`${report.source_sha256}\`
 
 Report SHA-256: \`${report.report_sha256}\`
+
+## Replay Trail
+
+From the repository root:
+
+~~~bash
+${replay.command ?? replayCommand()}
+~~~
+
+- Output Markdown: \`${outputFiles[0] ?? 'n/a'}\`
+- Output JSON: \`${outputFiles[1] ?? 'n/a'}\`
+- Source timestamp: ${report.source_generated_at ?? 'n/a'}
+- Block number: ${report.block_number ?? 'n/a'}
+- Source hash: \`${report.source_sha256}\`
+- Report hash: \`${report.report_sha256}\`
+- Report hash scope: ${replay.report_sha256_scope ?? 'n/a'}
 
 ## Summary
 
@@ -310,6 +371,25 @@ The guard reads the Chef Universe Bazaar API, scores every Ingredient Token, and
 - a guardrail table for concentration and liquidity risks
 
 The watch score favors ranked API signals, activity heat, positive short-horizon momentum, low 10k CHEF slippage, and mid-curve tokens. The guard score flags concentrated buy flow, thin buyer sets, high volume versus market cap, fragile liquidity, sell pressure, late-curve status, and missing short-horizon price movement.
+
+## Observed / Inferred / Not Checked
+
+Observed:
+
+${markdownBullets(interpretation.observed ?? [])}
+
+Inferred:
+
+${markdownBullets(interpretation.inferred ?? [])}
+
+Not checked:
+
+${markdownBullets(interpretation.not_checked ?? [])}
+
+Field notes:
+
+- Missing short-horizon price changes: ${interpretation.missing_short_horizon_price_change ?? 'n/a'}
+- 10k CHEF slippage: ${interpretation.liquidity_impact_10k_chef ?? 'n/a'}
 
 This report is not financial advice, does not claim guaranteed profit, and should be treated as a monitoring aid for Chef Universe agents and builders.
 `;
@@ -395,6 +475,7 @@ export {
   buildReport,
   clamp,
   makeTopSignalMap,
+  replayCommand,
   renderMarkdown,
   scoreIngredient,
 };

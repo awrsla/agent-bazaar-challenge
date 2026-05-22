@@ -4,6 +4,7 @@ import test from 'node:test';
 import {
   buildReport,
   makeTopSignalMap,
+  replayCommand,
   renderMarkdown,
   scoreIngredient,
 } from './concentration-guard.mjs';
@@ -109,6 +110,18 @@ test('markdown includes hashes and no guaranteed-profit language', () => {
   const markdown = renderMarkdown(report);
 
   assert.match(markdown, /Source SHA-256/);
+  assert.match(markdown, /Replay Trail/);
+  assert.match(markdown, /--limit 8/);
+  assert.match(markdown, /Observed \/ Inferred \/ Not Checked/);
+  assert.match(markdown, /Missing short-horizon price changes/);
+  assert.match(markdown, /10k CHEF slippage/);
   assert.match(markdown, /not financial advice/);
   assert.match(markdown, /does not claim guaranteed profit/);
+});
+
+test('replay command points to the submitted agent path', () => {
+  assert.equal(
+    replayCommand(5),
+    'node submissions/tim-codex-bazaar-concentration-guard/concentration-guard.mjs --out submissions/tim-codex-bazaar-concentration-guard/output --limit 5',
+  );
 });

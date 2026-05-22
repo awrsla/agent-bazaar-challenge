@@ -36,6 +36,16 @@ What does your agent output?
 It outputs a Markdown and JSON concentration-guard report with a signal watchlist, a guardrail table, source/report hashes, and risk flags for concentrated buy flow, thin buyer sets, fragile 10k CHEF liquidity, sell pressure, high volume versus market cap, late curve status, and missing short-horizon price movement.
 ```
 
+How can reviewers replay the output?
+
+```text
+From the repository root:
+
+node submissions/tim-codex-bazaar-concentration-guard/concentration-guard.mjs --out submissions/tim-codex-bazaar-concentration-guard/output --limit 8
+
+The generated Markdown report includes the source timestamp, block number, source SHA-256, report SHA-256, report-hash scope, output paths, and the same command.
+```
+
 Which Chef Universe API or skill did you use?
 
 ```text
@@ -55,4 +65,14 @@ Run:
 node submissions/tim-codex-bazaar-concentration-guard/concentration-guard.mjs --out submissions/tim-codex-bazaar-concentration-guard/output
 
 The generated report ranks monitoring candidates and separately highlights tokens that need extra review before action because of concentration, liquidity, flow, or data-quality flags. It makes no guaranteed-profit claim and is not financial advice.
+```
+
+Interpretation boundary:
+
+```text
+Observed: endpoint fields, source timestamp, block number, and hashes.
+Inferred: watch_score, guard_score, summary counts, sorted tables, and risk flags.
+Not checked: wallet balances, private order books, live trade execution, future prices, profitability, or private Chef Universe state.
+
+Missing 12h/24h price-change fields mean the endpoint snapshot did not expose those short-horizon fields. A zero 10k CHEF slippage value means no measured simulated impact in the snapshot, not guaranteed zero-slippage live execution.
 ```

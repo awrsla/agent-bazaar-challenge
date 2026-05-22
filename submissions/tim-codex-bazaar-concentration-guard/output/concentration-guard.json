@@ -1,15 +1,47 @@
 {
   "project": "Bazaar Concentration Guard",
-  "generated_at": "2026-05-21T23:02:48.232Z",
+  "generated_at": "2026-05-22T00:47:07.932Z",
   "endpoint": "https://www.chefuniverse.io/api/v1/agent_bazaar",
-  "source_generated_at": "2026-05-21T23:02:18.243Z",
-  "block_number": 46307595,
+  "source_generated_at": "2026-05-22T00:46:29.673Z",
+  "block_number": 46310718,
   "cache_age_sec": 0,
-  "source_sha256": "bd57aa404dada516adcb73eea72892e5950b1a1ed2d49944efe5f7381cd01d5f",
+  "source_sha256": "865c6f9b7ed819efabd967c4ac5c47449525be74aa4e131d56ee2ade189bada4",
+  "replay": {
+    "from": "repository root",
+    "command": "node submissions/tim-codex-bazaar-concentration-guard/concentration-guard.mjs --out submissions/tim-codex-bazaar-concentration-guard/output --limit 8",
+    "output_files": [
+      "submissions/tim-codex-bazaar-concentration-guard/output/concentration-guard.md",
+      "submissions/tim-codex-bazaar-concentration-guard/output/concentration-guard.json"
+    ],
+    "source_metadata": {
+      "endpoint": "https://www.chefuniverse.io/api/v1/agent_bazaar",
+      "source_generated_at": "2026-05-22T00:46:29.673Z",
+      "block_number": 46310718,
+      "cache_age_sec": 0,
+      "source_sha256": "865c6f9b7ed819efabd967c4ac5c47449525be74aa4e131d56ee2ade189bada4"
+    },
+    "report_sha256_scope": "JSON report object before report_sha256 is attached; it is not a file digest of concentration-guard.json."
+  },
   "methodology": {
     "watch_score": "Ranks signals, activity heat, positive momentum, liquidity, and curve position, then subtracts part of guard risk.",
     "guard_score": "Flags concentrated buy flow, fragile 10k CHEF liquidity, high volume versus market cap, sell pressure, late-curve status, and missing short-horizon price movement.",
     "claim_limit": "This is a monitoring report, not financial advice and not a guaranteed-profit system."
+  },
+  "interpretation": {
+    "observed": [
+      "Endpoint response fields: global asset metadata, Ingredient Token prices, supply progress, liquidity impact, volume, buyer concentration, source timestamp, block number, and top signals.",
+      "Source SHA-256 and report SHA-256 values in this report."
+    ],
+    "inferred": [
+      "watch_score, guard_score, summary counts, sorted tables, and flags derived from the endpoint fields.",
+      "Concentration, thin-buyer, fragile-liquidity, high-volume-versus-cap, sell-pressure, late-curve, and data-quality risk labels."
+    ],
+    "not_checked": [
+      "Wallet balances, private order books, live trade execution, external exchange routes, future prices, profitability, or any private Chef Universe state.",
+      "Whether another bot or human will act on the same signal after this snapshot."
+    ],
+    "missing_short_horizon_price_change": "When price_change_12h_pct or price_change_24h_pct is null, the endpoint snapshot did not expose that short-horizon field for the token. This should not be interpreted as flat price movement or no momentum.",
+    "liquidity_impact_10k_chef": "The 10k CHEF liquidity impact is the endpoint-provided simulated impact. A zero slippage value means the snapshot did not report measurable simulated impact, not that a live trade is guaranteed to execute with zero slippage. partial_fill=true or positive slippage marks the field as fragile."
   },
   "summary": {
     "ingredient_count": 31,
@@ -28,7 +60,7 @@
       "ticker": "cfAVOCADO",
       "kind": "VOLUME_SPIKE_24H",
       "score": 1,
-      "note": "24h vol 8.2x daily season avg"
+      "note": "24h vol 5.9x daily season avg"
     }
   ],
   "watchlist": [
@@ -270,8 +302,8 @@
       "current_price_chef": 0.00348883,
       "progress_pct": 27.36,
       "market_cap_chef": 19092400,
-      "volume_24h_chef": 76668872.81,
-      "volume_to_market_cap": 4.0157,
+      "volume_24h_chef": 79075378.51,
+      "volume_to_market_cap": 4.1417,
       "buy_user_count_24h": 1,
       "buy_volume_24h_chef": 2406505.7,
       "sell_volume_24h_chef": 0,
@@ -301,8 +333,8 @@
       "current_price_chef": 0.01003615,
       "progress_pct": 13.13,
       "market_cap_chef": 10542673.85,
-      "volume_24h_chef": 16113236.72,
-      "volume_to_market_cap": 1.5284,
+      "volume_24h_chef": 16462364.96,
+      "volume_to_market_cap": 1.5615,
       "buy_user_count_24h": 1,
       "buy_volume_24h_chef": 349128.24,
       "sell_volume_24h_chef": 0,
@@ -317,12 +349,42 @@
       },
       "volume_source": "leaderboard_season",
       "signal_score": 0,
-      "watch_score": 49.93,
-      "guard_score": 69.28,
+      "watch_score": 49.85,
+      "guard_score": 69.61,
       "flags": [
         "concentrated_buy_flow",
         "thin_buyer_set",
         "high_volume_vs_cap",
+        "missing_short_horizon_price_change"
+      ]
+    },
+    {
+      "ticker": "cfFRUITMIX",
+      "grade": 1,
+      "current_price_chef": 0.00104701,
+      "progress_pct": 1.05,
+      "market_cap_chef": 219857.31,
+      "volume_24h_chef": 103482.37,
+      "volume_to_market_cap": 0.4707,
+      "buy_user_count_24h": 1,
+      "buy_volume_24h_chef": 103477.16,
+      "sell_volume_24h_chef": 5.2,
+      "sell_to_buy_volume": 0.0001,
+      "top_buyer_concentration_24h_pct": 100,
+      "price_change_12h_pct": null,
+      "price_change_24h_pct": null,
+      "liquidity_impact_10k_chef": {
+        "slippage_pct": 0,
+        "avg_price_chef": 0.00104701,
+        "partial_fill": false
+      },
+      "volume_source": "leaderboard_season",
+      "signal_score": 0,
+      "watch_score": 50.36,
+      "guard_score": 63.71,
+      "flags": [
+        "concentrated_buy_flow",
+        "thin_buyer_set",
         "missing_short_horizon_price_change"
       ]
     },
@@ -332,7 +394,7 @@
       "current_price_chef": 0.00751403,
       "progress_pct": 7.69,
       "market_cap_chef": 4623652.05,
-      "volume_24h_chef": 4421966.98,
+      "volume_24h_chef": 4421974.52,
       "volume_to_market_cap": 0.9564,
       "buy_user_count_24h": 1,
       "buy_volume_24h_chef": 7.54,
@@ -363,8 +425,8 @@
       "current_price_chef": 0.02217303,
       "progress_pct": 13.15,
       "market_cap_chef": 5832424.71,
-      "volume_24h_chef": 4847177.48,
-      "volume_to_market_cap": 0.8311,
+      "volume_24h_chef": 4912574.18,
+      "volume_to_market_cap": 0.8423,
       "buy_user_count_24h": 1,
       "buy_volume_24h_chef": 65396.7,
       "sell_volume_24h_chef": 0,
@@ -379,8 +441,8 @@
       },
       "volume_source": "leaderboard_season",
       "signal_score": 0,
-      "watch_score": 51.67,
-      "guard_score": 62.31,
+      "watch_score": 51.65,
+      "guard_score": 62.42,
       "flags": [
         "concentrated_buy_flow",
         "thin_buyer_set",
@@ -394,8 +456,8 @@
       "current_price_chef": 0.00164239,
       "progress_pct": 10.8,
       "market_cap_chef": 3549106,
-      "volume_24h_chef": 2607412.51,
-      "volume_to_market_cap": 0.7347,
+      "volume_24h_chef": 2672651.55,
+      "volume_to_market_cap": 0.753,
       "buy_user_count_24h": 1,
       "buy_volume_24h_chef": 65239.04,
       "sell_volume_24h_chef": 0,
@@ -410,8 +472,39 @@
       },
       "volume_source": "leaderboard_season",
       "signal_score": 0,
-      "watch_score": 51.73,
-      "guard_score": 61.35,
+      "watch_score": 51.68,
+      "guard_score": 61.53,
+      "flags": [
+        "concentrated_buy_flow",
+        "thin_buyer_set",
+        "high_volume_vs_cap",
+        "missing_short_horizon_price_change"
+      ]
+    },
+    {
+      "ticker": "cfOLIVE",
+      "grade": 3,
+      "current_price_chef": 0.01325467,
+      "progress_pct": 4.61,
+      "market_cap_chef": 1222415.3,
+      "volume_24h_chef": 652225.23,
+      "volume_to_market_cap": 0.5336,
+      "buy_user_count_24h": 1,
+      "buy_volume_24h_chef": 539010.07,
+      "sell_volume_24h_chef": 0,
+      "sell_to_buy_volume": 0,
+      "top_buyer_concentration_24h_pct": 100,
+      "price_change_12h_pct": null,
+      "price_change_24h_pct": null,
+      "liquidity_impact_10k_chef": {
+        "slippage_pct": 0,
+        "avg_price_chef": 0.01325467,
+        "partial_fill": false
+      },
+      "volume_source": "leaderboard_season",
+      "signal_score": 0,
+      "watch_score": 51.74,
+      "guard_score": 59.34,
       "flags": [
         "concentrated_buy_flow",
         "thin_buyer_set",
@@ -425,8 +518,8 @@
       "current_price_chef": 0.01937764,
       "progress_pct": 10.96,
       "market_cap_chef": 4248781.39,
-      "volume_24h_chef": 2227975.67,
-      "volume_to_market_cap": 0.5244,
+      "volume_24h_chef": 2237722.62,
+      "volume_to_market_cap": 0.5267,
       "buy_user_count_24h": 1,
       "buy_volume_24h_chef": 9746.95,
       "sell_volume_24h_chef": 0,
@@ -441,76 +534,15 @@
       },
       "volume_source": "leaderboard_season",
       "signal_score": 0,
-      "watch_score": 52.27,
-      "guard_score": 59.24,
+      "watch_score": 52.26,
+      "guard_score": 59.27,
       "flags": [
         "concentrated_buy_flow",
         "thin_buyer_set",
         "high_volume_vs_cap",
         "missing_short_horizon_price_change"
       ]
-    },
-    {
-      "ticker": "cfFRUITMIX",
-      "grade": 1,
-      "current_price_chef": 0.00104701,
-      "progress_pct": 1.05,
-      "market_cap_chef": 219857.31,
-      "volume_24h_chef": 0,
-      "volume_to_market_cap": 0,
-      "buy_user_count_24h": 1,
-      "buy_volume_24h_chef": 103477.16,
-      "sell_volume_24h_chef": 5.2,
-      "sell_to_buy_volume": 0.0001,
-      "top_buyer_concentration_24h_pct": 100,
-      "price_change_12h_pct": null,
-      "price_change_24h_pct": null,
-      "liquidity_impact_10k_chef": {
-        "slippage_pct": 0,
-        "avg_price_chef": 0.00104701,
-        "partial_fill": false
-      },
-      "volume_source": "leaderboard_season",
-      "signal_score": 0,
-      "watch_score": 6.53,
-      "guard_score": 59,
-      "flags": [
-        "concentrated_buy_flow",
-        "thin_buyer_set",
-        "missing_short_horizon_price_change",
-        "quiet_tape"
-      ]
-    },
-    {
-      "ticker": "cfSUGAR",
-      "grade": 1,
-      "current_price_chef": 0.00199192,
-      "progress_pct": 15.05,
-      "market_cap_chef": 5994941.99,
-      "volume_24h_chef": 2338932.89,
-      "volume_to_market_cap": 0.3902,
-      "buy_user_count_24h": 2,
-      "buy_volume_24h_chef": 98522.49,
-      "sell_volume_24h_chef": 0,
-      "sell_to_buy_volume": 0,
-      "top_buyer_concentration_24h_pct": 99.9,
-      "price_change_12h_pct": null,
-      "price_change_24h_pct": null,
-      "liquidity_impact_10k_chef": {
-        "slippage_pct": 0,
-        "avg_price_chef": 0.00199192,
-        "partial_fill": false
-      },
-      "volume_source": "leaderboard_season",
-      "signal_score": 0,
-      "watch_score": 52.93,
-      "guard_score": 57.9,
-      "flags": [
-        "concentrated_buy_flow",
-        "thin_buyer_set",
-        "missing_short_horizon_price_change"
-      ]
     }
   ],
-  "report_sha256": "e67c8f487ea65457c32a0b35acb03f6cc8a16100eb4058dadc1c29a5b0132f0b"
+  "report_sha256": "878b9440506c44c71df00f0166dd23530ca8f7327fcbb4dae8021dd7a8bb5e2d"
 }
