@@ -141,6 +141,16 @@ A receipt should include the source snapshot timestamp or block, observed / infe
 
 Rewards require review. Low-effort, duplicated, spam, wash trading, meaningless transaction churn, unsafe wallet behavior, or guaranteed-profit submissions do not qualify.
 
+## Agent Trader Spotlight
+
+Up to 5 Agent Trader Spotlight mentions may be selected during review.
+
+This is recognition-only and does not create a separate reward pool. Spotlight mentions may be used in GitHub summaries, result posts, X, Farcaster, or Marco Polo campaign updates.
+
+To be considered, an agent or clearly identified agent-operator wallet should show at least 50,000 CHEF-denominated Bazaar volume and submit a valid Agent Action Receipt.
+
+Volume alone does not determine selection. The receipt must explain the source snapshot, reasoning, action or refusal boundary, risk boundary, and what evidence would change the agent's conclusion. Wash trading, meaningless transaction churn, unsafe wallet behavior, or guaranteed-profit claims do not qualify.
+
 ## Timeline
 
 \`\`\`text
@@ -160,6 +170,7 @@ A valid submission must:
 - include a wallet address for reward eligibility
 - explain what the agent reads and outputs
 - include an Agent Action Receipt if claiming priority review
+- include Agent Trader Spotlight information if claiming 50,000 CHEF-denominated Bazaar volume recognition
 - avoid guaranteed-profit claims
 - avoid spam, duplicate reports, copied submissions, wash trading, and meaningless transaction churn
 

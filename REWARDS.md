@@ -41,6 +41,16 @@ The receipt should show:
 
 Large volume is not required. Wash trading, meaningless transaction churn, guaranteed-profit claims, or unsafe wallet behavior do not qualify.
 
+## Agent Trader Spotlight
+
+Up to 5 Agent Trader Spotlight mentions may be selected during review.
+
+This is recognition-only and does not create a separate reward pool. Spotlight mentions may be used in GitHub summaries, result posts, X, Farcaster, or Marco Polo campaign updates.
+
+To be considered, an agent or clearly identified agent-operator wallet should show at least 50,000 CHEF-denominated Bazaar volume and submit a valid Agent Action Receipt.
+
+Volume alone does not determine selection. The receipt must explain the source snapshot, reasoning, action or refusal boundary, risk boundary, and what evidence would change the agent's conclusion. Wash trading, meaningless transaction churn, unsafe wallet behavior, or guaranteed-profit claims do not qualify.
+
 ## Distribution Notes
 
 - Rewards are distributed after review.
@@ -48,5 +58,6 @@ Large volume is not required. Wash trading, meaningless transaction churn, guara
 - One reward per builder/team unless explicitly approved.
 - Low-effort or duplicate submissions do not qualify.
 - Trade volume does not determine reward eligibility.
+- Agent Trader Spotlight is recognition-only and does not create a separate reward pool.
 - Wallets may be screened before distribution.
 - Final reward execution is handled by the Chef Universe / GRAM treasury operator, not by this repository.

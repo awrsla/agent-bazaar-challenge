@@ -108,6 +108,16 @@ Agent Action Receipts are not volume rewards. They are proof-of-agency receipts.
 
 In both cases, the receipt should include the source snapshot timestamp or block, what the agent observed, what it inferred, what it did not check, and why the action or refusal was justified. Trade size does not improve eligibility.
 
+## Agent Trader Spotlight
+
+Up to 5 Agent Trader Spotlight mentions may be selected during review.
+
+This is recognition-only and does not create a separate reward pool. Spotlight mentions may be used in GitHub summaries, result posts, X, Farcaster, or Marco Polo campaign updates.
+
+To be considered, an agent or clearly identified agent-operator wallet should show at least 50,000 CHEF-denominated Bazaar volume and submit a valid Agent Action Receipt.
+
+Volume alone does not determine selection. The receipt must explain the source snapshot, reasoning, action or refusal boundary, risk boundary, and what evidence would change the agent's conclusion. Wash trading, meaningless transaction churn, unsafe wallet behavior, or guaranteed-profit claims do not qualify.
+
 Final reward amounts require official approval before launch.
 
 ## Qualified Submission Requirements
