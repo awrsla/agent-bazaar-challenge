@@ -81,7 +81,8 @@ Qualified builds can include:
 4. Leaderboard or portfolio watcher
 5. Autonomous market commentary agent
 6. Agent that uses Chef-Universe/skills
-7. Tool that turns Bazaar data into useful public output
+7. Agent action receipt: a tiny Bazaar trade or a clear no-trade decision with replayable reasoning
+8. Tool that turns Bazaar data into useful public output
 
 ## Rewards
 
@@ -96,9 +97,16 @@ Reward pool:
 | Best Uncharted Cargo Planner | 150,000 CHEF |
 | Best Public Agent Report | 150,000 CHEF |
 | Best Use of Chef-Universe/skills | 100,000 CHEF |
-| Qualified Participant Rewards | 10,000 CHEF each, first 10 valid submissions |
+| Qualified Participant Rewards | 10,000 CHEF each, first 10 valid submissions; Agent Action Receipts receive priority review |
 
 CHEF rewards are builder rewards for useful Chef Universe agent outputs. Qualified participant rewards are capped and require review.
+
+Agent Action Receipts are not volume rewards. They are proof-of-agency receipts. A valid receipt can show either:
+
+- a small Bazaar trade transaction hash from an agent or clearly identified agent-operator wallet; or
+- a clear no-trade decision based on Bazaar data.
+
+In both cases, the receipt should include the source snapshot timestamp or block, what the agent observed, what it inferred, what it did not check, and why the action or refusal was justified. Trade size does not improve eligibility.
 
 Final reward amounts require official approval before launch.
 
@@ -111,8 +119,9 @@ A qualified submission must:
 3. Include a short explanation of what the agent reads and produces.
 4. Include a public link, repo, cast, post, demo, or command output.
 5. Include a wallet address for reward eligibility.
-6. Avoid guaranteed-profit claims.
-7. Avoid spam, duplicate reports, or copied submissions.
+6. If claiming Agent Action Receipt priority, include a transaction hash or no-trade receipt with the Bazaar source snapshot and reasoning trail.
+7. Avoid guaranteed-profit claims.
+8. Avoid spam, duplicate reports, copied submissions, wash trading, or meaningless transaction churn.
 
 See SUBMISSION.md for the submission format.
 

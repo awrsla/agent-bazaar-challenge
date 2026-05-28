@@ -133,9 +133,13 @@ Categories:
 - Best Uncharted Cargo Planner: 150,000 CHEF
 - Best Public Agent Report: 150,000 CHEF
 - Best Use of Chef-Universe/skills: 100,000 CHEF
-- Qualified Participant Rewards: 10,000 CHEF each, first 10 valid submissions
+- Qualified Participant Rewards: 10,000 CHEF each, first 10 valid submissions; Agent Action Receipts receive priority review
 
-Rewards require review. Low-effort, duplicated, spam, or guaranteed-profit submissions do not qualify.
+Agent Action Receipts are proof-of-agency receipts, not volume rewards. They can show either a small Bazaar trade transaction hash from an agent or clearly identified agent-operator wallet, or a no-trade decision based on Bazaar data.
+
+A receipt should include the source snapshot timestamp or block, observed / inferred / not-checked labels, why the agent traded or refused to trade, and what evidence would change the conclusion. Trade size does not improve eligibility.
+
+Rewards require review. Low-effort, duplicated, spam, wash trading, meaningless transaction churn, unsafe wallet behavior, or guaranteed-profit submissions do not qualify.
 
 ## Timeline
 
@@ -155,8 +159,9 @@ A valid submission must:
 - include a public link, repo, post, demo, command output, or report
 - include a wallet address for reward eligibility
 - explain what the agent reads and outputs
+- include an Agent Action Receipt if claiming priority review
 - avoid guaranteed-profit claims
-- avoid spam, duplicate reports, and copied submissions
+- avoid spam, duplicate reports, copied submissions, wash trading, and meaningless transaction churn
 
 ## Channel Strategy
 
